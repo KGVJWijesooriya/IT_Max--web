@@ -64,28 +64,27 @@
     $password = $_POST['password'];
 
     //sql query to save the data into database
-    $sql = "INSERT Info tbl_admin SET
+    $sql = "INSERT Into tbl_admin SET
     full_name='$full_name',
     username='$username',
     password='$password'
     ";
     
     // Executing Query and Saving data into database
-    $res = mysqli_query($conn, $sql) or die(mysqli_error());
+    $res = mysqli_query($conn, $sql);
 
 
     //check data is insert or not
     if($res==TRUE)
     {
         echo "Data Inserted";
+        header("Location: add-admin.php");
     }
     else
     {
         echo"Faild";
+        echo $sql;
     }
-    echo $sql;
-
-
     }
 
 ?>

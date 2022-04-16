@@ -1,0 +1,120 @@
+/* 
+    Author: Vimukthi Jayasanka
+    Theme : IT Max computer shop
+*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.btn-primary{
+    background-color: #32ff7e;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+}
+.btn-primary:hover{
+    background-color: #05c46b;
+}
+
+.btn-secondary1{
+    background-color: #32ff7e;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-secondary1:hover{
+    background-color: #05c46b;
+}
+
+.btn-secondary2{
+    background-color: #ff6b6b;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-secondary2:hover{
+    background-color: #ee5253;
+}
+/* menu */
+
+.menu{
+    text-align: center;
+}
+
+.menu ul{
+    list-style-type: none ;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.menu ul li a:hover{
+    color: aqua;
+}
+
+/* content */
+
+.content{
+    margin: 1% 0;
+    background-color: #576574;
+}
+
+.col-4{
+    width: 18%;
+    background-color: aliceblue;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+    
+}
+
+/* Manage Admin Page*/
+
+.tbl-full{
+    width: 100%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+/* New Admin */
+
+.tbl-30{
+    width: 30%;
+}

@@ -5,7 +5,7 @@
     <div class="wrapper">
         <h1>Add Admin</h1>
 
-        <form action="" method="post">
+        
 
         <table class="tbl-30">
             <tr>
@@ -45,14 +45,7 @@
 
 <?php
 
-    if(isset($_POST['submit']))
-    {
-        echo "button clicked";
-    }
-    else
-    {
-        echo "Button Not Clicked";
-    }
+
 
 
     if(isset($_POST['submit']))

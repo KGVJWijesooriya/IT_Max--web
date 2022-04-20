@@ -1,6 +1,11 @@
 <?php
+    
+
+    //start session
+    session_start();
 
     //create constants to store Non Repeating Values
+    define('SITEURL', 'http://localhost/main_project_1Y_2S/Web_Site/');
     define('LOCALHOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');

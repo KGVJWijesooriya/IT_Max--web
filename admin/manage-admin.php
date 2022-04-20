@@ -7,6 +7,22 @@
 
             <br />
 
+            <?php
+                if(isset($_SESSION['delete']))
+                {
+                    echo $_SESSION['delete'];
+                    unset($_SESSION['delete']);
+                }
+
+                if(isset($_SESSION['update']))
+                {
+                    echo $_SESSION['update'];
+                    unset($_SESSION['update']);
+                }
+            
+            ?>
+            <br /><br />
+
             <!-- Add Admin -->
             <a href="add-admin.php" class="btn-primary">Add Admin</a>
 
@@ -20,38 +36,51 @@
                     <th>Action</th>
                 </tr>
 
-                <tr>
-                    <td>001</td>
-                    <td>Vimukthi Jayasanka</td>
-                    <td>jayasanka</td>
-                    <td>
-                        <a href="#" class="btn-secondary1"> Update Admin</a>
-                        <a href="#" class="btn-secondary2"> Delete Admin</a>
-                    </td>
-                </tr>
+                    <?php
 
-                <tr>
-                    <td>001</td>
-                    <td>Vimukthi Jayasanka</td>
-                    <td>jayasanka</td>
-                    <td>
-                        <a href="#" class="btn-secondary1"> Update Admin</a>
-                        <a href="#" class="btn-secondary2"> Delete Admin</a>
-                    </td>
-                </tr>
+                        //Query to get all Admin
+                        $sql = "SELECT * FROM tbl_admin";
+                        //execute the query
+                        $res = mysqli_query($conn, $sql);
 
-                <tr>
-                    <td>001</td>
-                    <td>Vimukthi Jayasanka</td>
-                    <td>jayasanka</td>
-                    <td>
-                        <a href="#" class="btn-secondary1"> Update Admin</a>
-                        <a href="#" class="btn-secondary2"> Delete Admin</a>
-                    </td>
-                </tr>
+                        //Check whether the query is executed of not
+                        if($res==TRUE)
+                        {
+                            // count rows
+                            $count = mysqli_num_rows($res);
+                            
 
+                            //check the num of rows
+                            if($count>0)
+                            {
+                                while($row=mysqli_fetch_assoc($res))
+                                {
+                                    foreach($row as $key => $val){
+                                        //generate output
+                                        //echo $key . ": " . $val . "<BR />";
+                                    }
 
+                                    //display the value
+                                    ?>
 
+                                        <tr>
+                                            <td class="text-center"><?php echo $row['id'];?></td>
+                                            <td class="text-center"><?php echo $row['full_name'];?></td>
+                                            <td class="text-center"><?php echo $row['username'];?></td>
+                                            <td class="text-center">
+                                                <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $row["id"]; ?>"class="btn-secondary1"> Update Admin</a>
+                                                <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $row["id"]; ?>" class="btn-secondary2"> Delete Admin</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                }
+                            }
+                        }
+                        else
+                        {
+
+                        }
+                    ?>
             </table>
 
             <div class="clearfix"></div>

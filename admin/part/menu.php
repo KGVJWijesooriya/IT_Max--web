@@ -1,4 +1,5 @@
 <?php include('../config/constants.php') ?>
+<form action="" method="post">
 
 <!DOCTYPE html>
 <html lang="en">

@@ -35,7 +35,7 @@
                 else
                 {
                     //Redirect ti Manage admin Page
-                    header('loaction:'.SITEURL.'admin/manage-admin.php');
+                    header('admin/manage-admin.php');
                 }
             }
         
@@ -69,7 +69,7 @@
             <tr>
             <td colspan="2">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <input type="submit" name="submit" value="Add Admin" class="btn-primary" >
+                    <input type="submit" name="submit" value="Update Admin" class="btn-primary" >
 
                 </td>
             </tr>
@@ -90,7 +90,7 @@
          $id = $_POST['id'];
          $full_name = $_POST['full_name'];
          $username = $_POST['username'];
-         $password = $_POST['password']
+         $password = $_POST['password'];
 
          //creat a sql query to update admin
          $sql = "UPDATE tbl_admin SET
@@ -109,14 +109,14 @@
              // query executed and admin updated
              $_SESSION['update'] = "<div class='success'> Admin Updated Successfuly. </div> ";
              //Redirect to Manage admin Page
-             header('location:'.SITEURL.'admin/manage-admin.php');
+             header('location:manage-admin.php');
          }
          else
          {
              //faild to update
              $_SESSION['update'] = "<div class='error'> Faild to delete Admin </div>";
              //redirect to manage admin page
-             header('location:'.SITEURL.'admin/manage-admin.php');
+             header('location:manage-admin.php');
 
          }
     }

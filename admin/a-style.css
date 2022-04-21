@@ -7,7 +7,9 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.h1{
+    color: white;
+}
 .wrapper{
     padding: 1%;
     width: 80%;
@@ -16,6 +18,10 @@
 
 .text-center{
     text-align: center;
+}
+
+.text-color{
+    color: white;
 }
 
 .clearfix{
@@ -86,7 +92,9 @@
 
 .content{
     margin: 1% 0;
-    background-color: #576574;
+    background-color: #2f3640;
+    
+    
 }
 
 .col-4{
@@ -117,4 +125,17 @@ table tr td{
 
 .tbl-30{
     width: 30%;
+}
+
+/* Login Page */
+
+.login{
+    border: 1px solid gray;
+    width: 30%;
+    margin: 5% auto;
+}
+
+.login h1{
+    color: #e74c3c;
+    text-align: center;
 }

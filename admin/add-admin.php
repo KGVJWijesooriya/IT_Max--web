@@ -1,3 +1,4 @@
+<body class="content">
 <?php include('part/menu.php'); ?>
 
 
@@ -44,9 +45,6 @@
 </div>
 
 <?php
-
-
-
 
     if(isset($_POST['submit']))
     {

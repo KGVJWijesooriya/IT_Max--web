@@ -1,3 +1,4 @@
+<body class="content">
 <?php include('part/menu.php'); ?>
 
     <!-- content start-->

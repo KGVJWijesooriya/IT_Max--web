@@ -1,8 +1,11 @@
-<?php include('../config/constants.php') ?>
+<?php 
+
+    include('../config/constants.php'); 
+    include('login-check.php'); 
+
+?>
 <form action="" method="post">
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +23,7 @@
                 <li><a href="category.php">Category</a></li>
                 <li><a href="item.php">Item</a></li>
                 <li><a href="cart.php">Cart</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </div>

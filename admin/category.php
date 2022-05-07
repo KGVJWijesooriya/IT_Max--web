@@ -15,15 +15,15 @@
             <table class="tbl-full">
                 <tr>
                     <th>ID</th>
-                    <th>Full Name</th>
-                    <th>User Name</th>
+                    <th>Title</th>
+                    <th>Image Name</th>
                     <th>Action</th>
                 </tr>
 
                     <?php
 
                         //Query to get all Admin
-                        $sql = "SELECT * FROM tbl_admin";
+                        $sql = "SELECT * FROM tbl_category";
                         //execute the query
                         $res = mysqli_query($conn, $sql);
 
@@ -49,13 +49,13 @@
 
                                         <tr>
                                             <td class="text-center"><?php echo $row['id'];?></td>
-                                            <td class="text-center"><?php echo $row['full_name'];?></td>
-                                            <td class="text-center"><?php echo $row['username'];?></td>
+                                            <td class="text-center"><?php echo $row['title'];?></td>
+                                            <td class="text-center"><?php echo $row['image'];?></td>
                                             <td class="text-center">
-                                                <a href="./update-admin.php?id=<?php echo $row["id"]; ?>"class="btn-secondary1"> Update Admin</a>
-                                                <a href="./delete-admin.php?id=<?php echo $row["id"]; ?>" class="btn-secondary2"> Delete Admin</a>
+                                                <a href="./update-admin.php?id=<?php echo $row["id"]; ?>"class="btn-secondary1"> Update Category</a>
+                                                <a href="./delete-category.php?id=<?php echo $row["id"]; ?>" class="btn-secondary2"> Delete Category</a>
                                             </td>
-                                        </tr>
+                                        </tr> 
                                     <?php
                                 }
                             }

@@ -1,19 +1,21 @@
 <body class="content">
     <?php include('part/menu.php'); ?>
 
+    <!-- content start-->
     <div class="content">
         <div class="wrapper">
             <div class="head">
                 <div>
-                    <h1>Mamage Item</h1>
+                    <h1>Manage Item</h1>
                 </div>
-                <form action="" method="POST">
+                <form action="ap_item_search.php" method="POST">
                     <div class="i_search_bar">
                         <input type="search" name="search" placeholder="Enter Your Text" class="search_txt">
                         <button type="submit" class="search_btn"><span class="material-symbols-outlined">search</span></button>
                     </div>
                 </form>
             </div>
+
             <br />
             <!-- Add Admin -->
             <a href="<?php echo SITEURL; ?>admin/add-item.php" class="btn-primary">Add Item</a>
@@ -21,6 +23,12 @@
             <br /><br /><br />
 
 
+            <?php
+            if (isset($_SESSION['add'])) {
+                echo $_SESSION['add'];
+                unset($_SESSION['add']);
+            }
+            ?>
 
             <table class="tbl-full tdsize">
                 <tr>
@@ -34,39 +42,29 @@
                     <th>Action</th>
                 </tr>
 
-
                 <?php
 
-                //Get the Search Keyword
-                if (isset($_POST['search'])) {
-                    $search = $_POST['search'];
+                //Query to get all Admin
+                $sql = "SELECT * FROM tbl_singal_item";
+                //execute the query
+                $res = mysqli_query($conn, $sql);
 
-
-
-                    //SQL Query to Get foods based on search keyword
-                    $sql = "SELECT * FROM tbl_singal_item WHERE id LIKE '%$search%' OR title LIKE '%$search%' OR category_id LIKE '%$search%' ORDER BY id DESC";
-                    // echo $search;
-
-                    //Execute the Query
-                    $res = mysqli_query($conn, $sql);
-
-                    //Count rows 
+                //Check whether the query is executed of not
+                if ($res == TRUE) {
+                    // count rows
                     $count = mysqli_num_rows($res);
 
 
-
+                    //check the num of rows
                     if ($count > 0) {
-
-
-                        //Item Available
                         while ($row = mysqli_fetch_assoc($res)) {
-                            //Get the Values 
-                            $id = $row['id'];
-                            $title = $row['title'];
-                            $price = $row['price'];
-                            $image_name = $row['image_name'];
-                ?>
+                            foreach ($row as $key => $val) {
+                                //generate output
+                                //echo $key . ": " . $val . "<BR />";
+                            }
 
+                            //display the value
+                ?>
 
                             <tr>
                                 <td width="5%" class="text-center"><?php echo $row['id']; ?></td>
@@ -81,66 +79,19 @@
                                     <button class="btn-secondary2"><a href="./delete-item.php?id=<?php echo $row["id"]; ?>"> DELETE</a></button>
                                 </td>
                             </tr>
-                        <?php
-
-
+                <?php
                         }
-                    } else {
-                        //Categories not Available 
-                        echo "<div><br><h4>Sorry! We were not able to find any products for your desired keywords!<br></h4>";
-                        ?><br /><img src="284595933_1058817921714681_1560530709646485530_n.jpg" width="40%">
-        </div>
-        <?php
                     }
                 } else {
-                    $sql = "SELECT * FROM tbl_singal_item ORDER BY id DESC";
-                    //execute the query
-                    $res = mysqli_query($conn, $sql);
-
-                    //Check whether the query is executed of not
-                    if ($res == TRUE) {
-                        // count rows
-                        $count = mysqli_num_rows($res);
-
-
-                        //check the num of rows
-                        if ($count > 0) {
-                            while ($row = mysqli_fetch_assoc($res)) {
-                                foreach ($row as $key => $val) {
-                                    //generate output
-                                    //echo $key . ": " . $val . "<BR />";
-                                }
-
-                                //display the value
-                ?>
-
-                <tr>
-                    <td width="5%" class="text-center"><?php echo $row['id']; ?></td>
-                    <td width="20%" class="text-center"><?php echo $row['title']; ?></td>
-                    <td width="5%" class="text-center"><?php echo $row['warranty']; ?></td>
-                    <td width="10%" class="text-center"><?php echo $row['price']; ?></td>
-                    <td width="10%" class="text-center"><?php echo $row['image_name']; ?></td>
-                    <td width="5%" class="text-center"><?php echo $row['category_id']; ?></td>
-                    <td width="5%" class="text-center"><?php echo $row['active']; ?></td>
-                    <td width="10%" class="text-center">
-                        <button class="btn-secondary1"><a href="./update-item.php?id=<?php echo $row["id"]; ?>"> UPDATE</a></button><br><br>
-                        <button class="btn-secondary2"><a href="./delete-item.php?id=<?php echo $row["id"]; ?>"> DELETE</a></button>
-                    </td>
-                </tr>
-<?php
-                            }
-                        }
-                    } else {
-                    }
                 }
-?>
+                ?>
+            </table>
 
-</table>
+            <div class="clearfix"></div>
 
-<div class="clearfix"></div>
-
+        </div>
     </div>
-    </div>
+    <!-- content start-->
 
 
 
@@ -183,3 +134,5 @@
     </div>
     </table>
 </body>
+
+</html>

@@ -1,4 +1,4 @@
-<body class="content">
+<body class="loginbg">
 <?php include('../config/constants.php'); ?>
 
 <!DOCTYPE html>
@@ -6,45 +6,48 @@
 <head>
          
     <title>Login</title>
-    <link rel="stylesheet" href="a-style.css"> 
+    <link rel="stylesheet" href="../CSS/a-style.css"> 
 
 </head>
-<body class="content">
+
 
         <div class="login">
-            <h1> LOGIN </h1>
-            <br/><br/>
+                    <img src="../Images/Logo/logo.png" alt="">
+                    <br><br>
+                    <h1> LOGIN </h1>
+                    <br/>
 
-            <?php
-                if(isset($_SESSION['login']))
-                {
-                    echo $_SESSION['login'];
-                    unset($_SESSION['login']);
-                }
+                    <?php
+                        if(isset($_SESSION['login']))
+                        {
+                            echo $_SESSION['login'];
+                            unset($_SESSION['login']);
+                        }
 
-                if(isset($_SESSION['no-login-message']))
-                {
-                    echo $_SESSION['no-login-message'];
-                    unset($_SESSION['no-login-message']);
-                }
-            ?>
-            <br/><br/>
+                        if(isset($_SESSION['no-login-message']))
+                        {
+                            echo $_SESSION['no-login-message'];
+                            unset($_SESSION['no-login-message']);
+                        }
+                    ?>
+                    <br/><br/>
 
-            <!-- Login Form Starts Here -->
-            <form action="" method="POST" class="text-center text-color">
-                Username:<br/>
-                <input type="text" name="username" placeholder="Enter Username"><br/><br/>
-                Password:<br/>
-                <input type="password" name="password" placeholder="Enter Password"><br/><br/><br/><br/>
+                    <!-- Login Form Starts Here -->
+                    <form action="" method="POST" class="text-center text-color">
+                        Username:<br/>
+                        <input type="text" name="username" placeholder="Enter Username" class="logintxt" required><br/><br/>
+                        Password:<br/>
+                        <input type="password" name="password" placeholder="Enter Password" class="logintxt" required><br/><br/><br>
 
-                <input type="submit" name="submit" value="Login" class="btn-primary">
-            </form>
+                        <input type="submit" name="submit" value="Login" class="loginbtn">
+                        
+                    </form>
+                    <br><br>
 
-            <!-- Login Form Ends Here -->
-            
-            <p>udbfjoguiofjldbnjfhuoaglfknhuofklnklnshifhknvk;ajpfh</p>
-
-
+                    <!-- Login Form Ends Here -->
+                    
+                    </div>
+                </div>
         </div>
     
 </body>

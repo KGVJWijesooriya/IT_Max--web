@@ -1,10 +1,14 @@
 <body class="content">
 <?php include('part/menu.php'); ?>
 
-    <!-- content start-->
-    <div class="content">
+
+<div class="content">
         <div class="wrapper">
-            <h1>Manage Admin</h1>
+            <div class="head">
+                <h1>Manage Admin</h1>
+            </div>
+    <!-- content start-->
+
 
             <br /><br />
 
@@ -33,12 +37,12 @@
                 }
             
             ?>-->
-            <br /><br />
+            
 
             <!-- Add Admin -->
             <a href="add-admin.php" class="btn-primary">Add Admin</a>
 
-            <br />
+            <br /><br /><br />
 
             <table class="tbl-full">
                 <tr>
@@ -80,8 +84,8 @@
                                             <td class="text-center"><?php echo $row['full_name'];?></td>
                                             <td class="text-center"><?php echo $row['username'];?></td>
                                             <td class="text-center">
-                                                <a href="./update-admin.php?id=<?php echo $row["id"]; ?>"class="btn-secondary1"> Update Admin</a>
-                                                <a href="./delete-admin.php?id=<?php echo $row["id"]; ?>" class="btn-secondary2"> Delete Admin</a>
+                                            <button class="btn-secondary1"> <a href="./update-admin.php?id=<?php echo $row["id"]; ?>"class="btn-secondary1"> UPDATE </a></button>
+                                            <button class="btn-secondary2"><a href="./delete-admin.php?id=<?php echo $row["id"]; ?>" class="btn-secondary2"> DELETE </a></button>
                                             </td>
                                         </tr>
                                     <?php

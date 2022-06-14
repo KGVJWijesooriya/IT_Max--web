@@ -4,34 +4,28 @@
 
 <div class="main-content">
     <div class="wrapper">
-        <h1>Add Admin</h1>
+        <h1 align="center">ADD NEW ADMIN</h1><br><br>
 
         
 
-        <table class="tbl-30">
+        <table class="tbl-31">
             <tr>
-                <td>Full Name: </td>
-                <td>
-                    <input type="text" name="full_name" placeholder="Enter Your Full Name">
+                <td >Full Name:<br><br>
+                    <input type="text" name="full_name" placeholder="Enter Your Full Name" class="textbox"><br>
+                </td>
+                <td></td>
+
+                <td>Username: <br><br>
+                    <input type="text" name="username" placeholder="Enter Your Username"class="textbox">
+                </td>
+                <td></td>
+
+                <td>Password: <br><br>
+                    <input type="password" name="password" placeholder="Enter Your Pasword"class="textbox">
                 </td>
             </tr>
-
-            <tr>
-                <td>Username: </td>
-                <td>
-                    <input type="text" name="username" placeholder="Enter Your Username">
-                </td>
-            </tr>
-
-            <tr>
-                <td>Password: </td>
-                <td>
-                    <input type="password" name="password" placeholder="Enter Your Pasword">
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="2">
+            
+                <td colspan="5">
                     <input type="submit" name="submit" value="Add Admin" class="btn-primary" >
 
                 </td>

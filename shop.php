@@ -3,26 +3,43 @@
 
 <section id="Topic">
 
-<?php include('partials-front/category.php') ?>
+    <?php include('partials-front/category.php') ?>
     <h1>SHOP</h1>
-    
-</section>
 
+</section>
+<?php
+$page = $_GET["page"];
+
+if ($page == "" || $page == "1")
+{
+    $page1=0;
+}
+else
+{
+    $page1=($page*5)-5;
+}
+
+?>
 <section>
     <div class="shop">
-        <div id="S_product_B" class="section-p1">
+        <div id="S_product_B">
             <?php
-            $sql = "SELECT * FROM tbl_singal_item WHERE active='yes' ORDER BY id DESC";
-            $res = mysqli_query($conn, $sql);
-            $count = mysqli_num_rows($res);
+        $sql = "SELECT * FROM tbl_singal_item WHERE active='yes' ORDER BY id DESC limit $page1,16";
+        $res = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($res);
 
-            if ($count > 0) {
-                while ($row = mysqli_fetch_assoc($res)) {
-                    $id = $row['id'];
-                    $title = $row['title'];
-                    $price = $row['price'];
-                    $image_name = $row['image_name'];
-                    $category_id = $row['category_id'];
+        $a = $count / 5;
+        $a = ceil($a);
+        // echo $a;
+        echo "<br>";
+        echo "<br>";
+        if ($count > 0) {
+            while ($row = mysqli_fetch_assoc($res)) {
+                $id = $row['id'];
+                $title = $row['title'];
+                $price = $row['price'];
+                $image_name = $row['image_name'];
+                $category_id = $row['category_id'];
 
             ?>
 
@@ -48,10 +65,19 @@
 
             <?php
 
-                }
             }
+        }
             ?>
         </div>
+        <?php
+        $sql1 = "SELECT * FROM tbl_singal_item WHERE active='yes'";
+        $res1 = mysqli_query($conn, $sql);
+        $count = mysqli_num_rows($res1);
+
+        for ($b = 1; $b <= $a; $b++) {
+        ?><a href="shop.php?page=<?php echo $b ?>"><?php echo $b . ""; ?></a> <?php
+                                                                            }
+                                                                                ?>
     </div>
 </section>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -59,15 +85,14 @@
     AOS.init();
 </script>
 <script>
-    var menuBtn= document.getElementById("menuBtn");
-    var sideNav= document.getElementById("sideNav");
+    var menuBtn = document.getElementById("menuBtn");
+    var sideNav = document.getElementById("sideNav");
 
     sideNav.style.left = "-40vh";
-    menuBtn.onclick = function (){
-        if(sideNav.style.left == "-40vh"){
+    menuBtn.onclick = function() {
+        if (sideNav.style.left == "-40vh") {
             sideNav.style.left = "0";
-        }
-        else{
+        } else {
             sideNav.style.left = "-40vh";
         }
     }

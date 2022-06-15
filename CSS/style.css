@@ -297,7 +297,7 @@ a:link, a:visited,  a:hover, a:active
     align-items:center;
     flex-wrap: wrap;
     text-decoration: none;
-    padding: 10vh 0 0 10vh;
+    padding: 10vh 0 0 30vh;
 }
 
 #S_product_B .pc-box{
@@ -311,8 +311,8 @@ a:link, a:visited,  a:hover, a:active
 
 
 #S_product_B .i-box {
-    width: 30vh;
-    height: 50vh;
+    width: 40vh;
+    height: 60vh;
     text-align: center;
     background: rgb(0, 0, 0);
     border: 2px solid rgb(0, 0, 0);
@@ -327,12 +327,12 @@ a:link, a:visited,  a:hover, a:active
     width: 20vh;
 }
 #S_product_B .i-box p{
-    padding-top: 1vh;
+    padding-top: 2vh;
     padding-bottom: 0vh;
     font-size: 2vh;
 }
 #S_product_B .i-box h1{
-    font-size: 4vh;
+    font-size: 6vh;
 }
 #S_product_B .i-box:hover {
     background-color: #4cd137;
@@ -341,14 +341,14 @@ a:link, a:visited,  a:hover, a:active
 }
 .deat{
     width: 100%;
-    height: 22vh;
+    height: 30vh;
     background-color: #000000;
 
 }
 #S_product_B h3{
-    font-size: 3vh;
+    font-size: 4vh;
     color: white;
-    background-color: #000000;
+    /* background-color: #000000; */
 }
 
 /*singal product box*/

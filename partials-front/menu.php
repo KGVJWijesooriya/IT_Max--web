@@ -32,18 +32,22 @@
 
 <body>
 
-    <section id="header">
-            <a href="index.php"><img src="Images/Logo/logo.png" class="logo"></a>
-        <div>
-            <ul id="navbar">
-                <li><?php include('partials-front/searchbox.php') ?></li>
-                <li><a href="index.php">HOME</a></li>
-                <li><a href="shop.php">SHOP</a></li>
-                <li><a href="about.php">ABOUT</a></li>
-                <li><a href="contact.php">CONTACT</a></li>
-                <li><a href="cart2.php"><span class="material-symbols-outlined">
-                            shopping_cart
-                        </span></a></li>
-            </ul>
-        </div>
-    </section>
+<nav id="Mnav">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <span class="material-symbols-outlined">
+            menu
+        </span>
+    </label>
+    <a href="index.php"><img src="./Images/Logo/logo.png" class="logo" width="100px"></a>
+    <ul>
+        <li><?php include('partials-front/searchbox.php') ?></li>
+        <li><a href="index.php">HOME</a></li>
+        <li><a href="shop.php">SHOP</a></li>
+        <li><a href="about.php">ABOUT</a></li>
+        <li><a href="contact.php">CONTACT</a></li>
+        <li><a href="cart2.php"><span class="material-symbols-outlined">
+                    shopping_cart
+                </span></a></li>
+    </ul>
+</nav>

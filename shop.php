@@ -10,13 +10,10 @@
 <?php
 $page = $_GET["page"];
 
-if ($page == "" || $page == "1")
-{
-    $page1=0;
-}
-else
-{
-    $page1=($page*5)-5;
+if ($page == "" || $page == "1") {
+    $page1 = 0;
+} else {
+    $page1 = ($page * 5) - 5;
 }
 
 ?>
@@ -24,22 +21,22 @@ else
     <div class="shop">
         <div id="S_product_B">
             <?php
-        $sql = "SELECT * FROM tbl_singal_item WHERE active='yes' ORDER BY id DESC limit $page1,16";
-        $res = mysqli_query($conn, $sql);
-        $count = mysqli_num_rows($res);
+            $sql = "SELECT * FROM tbl_singal_item WHERE active='yes' ORDER BY id DESC limit $page1,16";
+            $res = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($res);
 
-        $a = $count / 5;
-        $a = ceil($a);
-        // echo $a;
-        echo "<br>";
-        echo "<br>";
-        if ($count > 0) {
-            while ($row = mysqli_fetch_assoc($res)) {
-                $id = $row['id'];
-                $title = $row['title'];
-                $price = $row['price'];
-                $image_name = $row['image_name'];
-                $category_id = $row['category_id'];
+            $a = $count / 5;
+            $a = ceil($a);
+            // echo $a;
+            echo "<br>";
+            echo "<br>";
+            if ($count > 0) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $id = $row['id'];
+                    $title = $row['title'];
+                    $price = $row['price'];
+                    $image_name = $row['image_name'];
+                    $category_id = $row['category_id'];
 
             ?>
 
@@ -65,8 +62,8 @@ else
 
             <?php
 
+                }
             }
-        }
             ?>
         </div>
         <?php

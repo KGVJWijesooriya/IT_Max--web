@@ -1,4 +1,5 @@
 <title>View Quotation</title>
+
 <body class="content">
     <?php include('part/menu.php'); ?>
 
@@ -161,4 +162,4 @@
         </script>";
         }
     }
-?>
+    ?>

@@ -142,20 +142,6 @@
     </table>
 </body>
 
-<?php
-
-// if(isset($_POST['delete']))
-//     {
-//       $path = "../Images/product_category/$image";
-//       if (!unlink($path)) 
-//       {
-//        echo "You Have Error !";
-//       }
-//        else {
-
-//        }
-//     }
-?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -223,15 +209,9 @@ if (isset($_POST['submit'])) {
 
     //4 check whether the query executed or not and data added or not
     if ($res == true) {
-        //Query Executed and category added
         $_SESSION['add'] = "<div class='sucess'> Item Update Successfully.</div>";
-        //Redirect to manage category page
-        // header('location:'.SITEURL.'admin/item.php');
     } else {
-        //faild to add category
         $_SESSION['add'] = "<div class='error'> Faild to Update Item.</div>";
-        //Redirect to manage category page
-        header('location:' . SITEURL . 'admin/item.php');
     }
 }
 

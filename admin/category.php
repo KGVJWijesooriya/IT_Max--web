@@ -1,3 +1,4 @@
+<title>Manage Category</title>
 <body class="content">
     <?php include('part/menu.php'); ?>
 
@@ -18,7 +19,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
-                    <th>Image Name</th>
                     <th>Action</th>
                 </tr>
 
@@ -49,7 +49,6 @@
                             <tr>
                                 <td class="text-center"><?php echo $row['id']; ?></td>
                                 <td class="text-center"><?php echo $row['title']; ?></td>
-                                <td class="text-center"><?php echo $row['image']; ?></td>
                                 <td class="text-center">
                                     <button class="btn-secondary1"> <a href="./update-category.php?id=<?php echo $row["id"]; ?>"> UPDATE </a></button>
                                     <button class="btn-secondary2"><a href="./delete-category.php?id=<?php echo $row["id"]; ?>"> DELETE </a></button>

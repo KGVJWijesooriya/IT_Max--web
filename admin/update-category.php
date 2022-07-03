@@ -1,3 +1,4 @@
+<title>Update Category</title>
 <body class="content">
 <?php include('part/menu.php'); ?>
 
@@ -30,7 +31,6 @@
                     $row=mysqli_fetch_assoc($res);
 
                     $title = $row['title'];
-                    $image = $row['image'];
                 }
                 else
                 {
@@ -52,20 +52,7 @@
             <tr>
                 <td>Title: </td>
                 <td>
-                    <input type="text" name="title" value="<?php echo $title ?>">
-                </td>
-            </tr>
-
-            <tr>
-                <td>Image: </td>
-                <td>
-                    <input type="file" name="file">
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                <input type="submit" name="delete" value="Delete Image" class="btn-secondary2" >
+                    <input class="textbox" type="text" name="title" value="<?php echo $title ?>">
                 </td>
             </tr>
 
@@ -76,13 +63,8 @@
 
                 </td>
             </tr>
-
-            
-
         </table>
-
     </div>
-
 </div>
 
 <?php

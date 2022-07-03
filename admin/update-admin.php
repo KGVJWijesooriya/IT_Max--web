@@ -1,3 +1,4 @@
+<title>Update Admin</title>
 <body class="content">
     <?php include('part/menu.php'); ?>
 
@@ -45,21 +46,21 @@
                     <tr>
                         <td>Full Name: </td>
                         <td>
-                            <input type="text" name="full_name" value="<?php echo $full_name ?>">
+                            <input class="textbox" type="text" name="full_name" value="<?php echo $full_name ?>">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Username: </td>
                         <td>
-                            <input type="text" name="username" value="<?php echo $username ?>">
+                            <input class="textbox" type="text" name="username" value="<?php echo $username ?>">
                         </td>
                     </tr>
 
                     <tr>
                         <td>Password: </td>
                         <td>
-                            <input type="password" name="password" value="<?php echo $password ?>">
+                            <input class="textbox" type="password" name="password" value="<?php echo $password ?>">
                         </td>
                     </tr>
 

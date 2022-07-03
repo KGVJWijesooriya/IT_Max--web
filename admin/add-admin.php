@@ -1,3 +1,4 @@
+<title>Add New Admin</title>
 <body class="content">
 <?php include('part/menu.php'); ?>
 

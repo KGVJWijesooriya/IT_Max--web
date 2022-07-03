@@ -280,18 +280,21 @@ aside .sidebar a:hover{
 }
 .col-8{
     background-color: #0fbcf9;
+    height: 7rem;
 }
 .col-9{
     background-color: #ff3838;
+    height: 7rem;
 }
 .col-10{
     background-color: #0be881;
+    height: 7rem;
 }
 
 .iboxa{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 100%;
     transition: ease-out.3s;
 }
@@ -563,4 +566,17 @@ table tbody tr:hover{
     color:#eee;
     font-size: 20px;
     padding:10px 0;
+}
+
+.qsubmit {
+    /* text-align: center; */
+    padding-left: 30vh;
+}
+
+.qsubmit button {
+    background: #0abde3;
+    border: none;
+    border-radius: .5rem;
+    height: 3rem;
+    width: 10rem;
 }

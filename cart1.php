@@ -31,17 +31,12 @@
             </thead>
 
             <?php
-            //Create SQL Query to Dispaly Categories from Database
             $sql = "SELECT * FROM tbl_cart";
-            //Execute the Query
             $res2 = mysqli_query($conn, $sql);
-            //Count rows to check whether the category is available or not
             $count = mysqli_num_rows($res2);
 
             if ($count > 0) {
-                //categories Available
                 while ($row = mysqli_fetch_assoc($res2)) {
-                    //Get the Values like id, title, image_name
                     $id = $row['id'];
                     $product_id = $row['product_id'];
                     $image_name = $row['image_name'];
@@ -181,7 +176,6 @@ if (isset($_POST['submit'])) {
     $s_email = $_POST['s_email'];
 
     if ($count > 0) {
-        //categories Available
         while ($row = mysqli_fetch_assoc($res2)) {
             $i_id = $row['id'];
             $title = $row['title'];;

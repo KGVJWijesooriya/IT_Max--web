@@ -62,33 +62,39 @@ a:active {
 
 
 /*search box*/
-.search-box {
+
+.search-box{
     position: right;
+    top: 50%;
+    left: 50%;
+    background: #2f3640;
     height: 40px;
+    border-radius: 40px;
 
 }
-
 .search-box:hover > .search-txt{
     width: 240px;
     padding: 0 6px;
     top: 50px;
 }
-.search-box:hover>.search-btn {
-    background: white;
-}
-
-.search-btn {
+.search-box:hover > .search-btn{
+   background: white;
+     }
+.search-btn{
     color: #e84118;
-    width: 80px;
+    float: right;
+    width: 40px;
     height: 40px;
-    line-height: 1px;
-    border: none;
+    border-radius: 50%;
     background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.4s;
     text-decoration: none;
+    border: none;
 }
-
-.search-txt {
+.search-txt{
     border: none;
     background: none;
     outline: none;
@@ -96,15 +102,11 @@ a:active {
     padding: 0;
     color: white;
     font-size: 16px;
-    transition: 0.4s;
-    /* line-height: 40px; */
+    transition: 0.4s;   
+    line-height: 40px;
     width: 0px;
 }
 
-/* .searchv {
-    padding-left: 100px;
-    padding-top: 50px;
-} */
 
 
 /* heder Start */
@@ -143,6 +145,7 @@ a:active {
     padding: 7px 13px;
     border-radius: 3px;
     text-transform: uppercase;
+    color: white;
 }
 
 .checkbtn {
@@ -248,7 +251,6 @@ a:active {
 
 .HSbutton {
     text-align: center;
-    /* justify-content: center; */
 }
 
 #hero button {
@@ -297,67 +299,59 @@ a:active {
 
 /* shop*/
 
-.category ul li {
-    background: #2c3e50;
-    list-style: none;
-    padding: 0 15px;
-}
-
-
-#sideNav {
-    width: 40vh;
-    position: fixed;
-    left: -40vh;
-    top: 5;
-    z-index: 2;
-    transition: .5s;
-}
-
-.category ul li {
-    list-style: none;
-}
-
-.category ul li a {
+#productC{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
     text-decoration: none;
-    color: rgb(0, 0, 0);
 }
 
-#menuBtn {
-    width: 50px;
-    position: fixed;
-    left: 65px;
-    z-index: 2;
-    cursor: pointer;
-    color: white;
+.category{
+    margin-left: 5vh;
 }
 
-.category p {
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 2vh;
-    text-align: left;
+.apc-box p {
+    color: black;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 900;
+    
 }
 
-/* 
-.pc-box-image {
-    width: 25%;
-    float: left;
-    padding-left: 7.5px;
-    padding-right: 7.5px;
+#productC .pc-box {
+    width: 250px;
+    height: 50px;
+    background: white;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 3px;
 }
+
+#productC .pc-box:hover {
+    background-color: #18dcff;
+    transition: 0.4s;
+
+}
+#productC .pc-box::after{
+    background: #fff;
+    transition: 0.2s;
+  }
+
+#productC .pc-box:hover::after{
+    transform: scale(.9);
+  }
 
 .pc-box-text{
     margin-top: 6px;
-    width: 70%;
+    /* width: 70%; */
     float: left;
     color: rgb(0, 0, 0);
     padding-left: 7.5px;
     text-transform: uppercase;
-    font-size: 1rem;
+    padding-top: 10px;
+    font-size: 20px;
     font-weight: 900;
 
-} */
+}
 
 /*product*/
 
@@ -653,4 +647,16 @@ a:active {
     width: 12rem;
     transition: .4s;
     font-weight: 700;
+}
+
+.pagi{
+    display: flex;
+    /* align-items: center; */
+    flex-wrap: wrap;
+    text-align: center;
+}
+.pagi a{
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
 }

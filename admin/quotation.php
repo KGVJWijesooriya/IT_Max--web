@@ -1,3 +1,4 @@
+<title>Manage Quotation</title>
 <body class="content">
     <?php include('part/menu.php'); ?>
 
@@ -7,8 +8,7 @@
             <div class="head">
                 <h1>Manage Quotation</h1>
             </div>
-
-
+            <br><br>
             <table class="tbl-full">
                 <tr>
                     <th>Full Name</th>
@@ -57,68 +57,11 @@
 
         </div>
     </div>
-
-
     <!-- content start-->
 
-    <!-- Footer start-->
-    <div class="footer">
-        <div class="col-8 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer";
 
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Total Quotation
-
-        </div>
-
-        <div class="col-9 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer WHERE s_email='no'";
-
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Pending Quotation
-
-        </div>
-        
-        <div class="col-10 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer WHERE s_email='yes'";
-
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Email Send Quotation
-
-        </div>
+    <div>
+        <?php include('part/quotationinfo.php') ?>
     </div>
     <!-- Footer start-->
 </body>

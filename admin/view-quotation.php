@@ -1,3 +1,4 @@
+<title>View Quotation</title>
 <body class="content">
     <?php include('part/menu.php'); ?>
 
@@ -26,159 +27,138 @@
             }
             ?>
             <div class="quotation">
-                <div>
-                    <h3>Customer Details</h3>
-                    <table>
-                        <tr>
-                            <td>Name</td>
-                            <td>
-                                <P><?php echo $cname; ?></P>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Phone Number</td>
-                            <td>
-                                <P><?php echo $cnumber; ?></P>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>
-                                <P><?php echo $cemail; ?></P>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td><?php echo $s_email ?> Email Sent</td>
-                        </tr>
-
-
-                    </table>
-                </div>
-                <br><br>
-                <div>
-                    <h3>Oder Details</h3>
-
-                    <table>
-                        <thead>
+                <form action="" method="post">
+                    <div>
+                        <h3>Customer Details</h3>
+                        <table>
                             <tr>
-                                <th>Product ID</th>
-                                <th>Product Title</th>
-                                <th>Quontitiy</th>
-                                <th>Product Price</th>
-                                <th>Total</th>
+                                <td>Name</td>
+                                <td>
+                                    <P><?php echo $cname; ?></P>
+                                </td>
                             </tr>
-                        </thead>
-                        <?php
-                        if (isset($_GET['id'])) {
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>
+                                    <P><?php echo $cnumber; ?></P>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>
+                                    <P><?php echo $cemail; ?></P>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td><?php echo $s_email ?> Email Sent</td>
+                            </tr>
 
-                            $o_id = $_GET['id'];
+                            <input type="hidden" name="c_id" value="<?php echo $c_id; ?> ">
+                            <input type="hidden" name="s_email" value="YES">
 
-                            $sql1 = "SELECT * FROM tbl_order WHERE o_id='$o_id'";
+                        </table>
+                    </div>
+                    <br><br>
+                    <div>
+                        <h3>Oder Details</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Product ID</th>
+                                    <th>Product Title</th>
+                                    <th>Quontitiy</th>
+                                    <th>Product Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            if (isset($_GET['id'])) {
 
-                            // echo $sql;
-                            $res1 = mysqli_query($conn, $sql1);
+                                $o_id = $_GET['id'];
 
-                            $count = mysqli_num_rows($res1);
+                                $sql1 = "SELECT * FROM tbl_order WHERE o_id='$o_id'";
 
-                            if ($count > 0) {
+                                // echo $sql;
+                                $res1 = mysqli_query($conn, $sql1);
 
-                                while ($row1 = mysqli_fetch_assoc($res1)) {
+                                $count = mysqli_num_rows($res1);
 
-                                    $o_id = $row1['o_id'];
-                                    $i_id = $row1['i_id'];
-                                    $title = $row1['title'];
-                                    $qty = $row1['qty'];
-                                    $price = $row1['price'];
+                                if ($count > 0) {
 
-                        ?>
-                                    <tbody>
-                                        <tr>
-                                            <td class="cen">
-                                                <P><?php echo $i_id; ?></P>
-                                            </td>
-                                            <td>
-                                                <P><?php echo $title; ?></P>
-                                            </td>
-                                            <td class="cen">
-                                                <P><?php echo $qty; ?></P>
-                                                <input type="hidden" value="<?php echo $qty ?>" class="iqty" name="Mod_Quantity" onchange="subTotal()">
-                                            </td>
-                                            <td class="cen">
-                                                <P class="iprice"><?php echo $price; ?></P>
-                                                <input name="price" type="hidden" value="<?php echo $price ?>" class="iprice">
-                                            </td>
-                                            <td>
-                                                <p class="itotal"><?php echo $price * $qty ?></p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    while ($row1 = mysqli_fetch_assoc($res1)) {
 
-                        <?php
+                                        $o_id = $row1['o_id'];
+                                        $i_id = $row1['i_id'];
+                                        $title = $row1['title'];
+                                        $qty = $row1['qty'];
+                                        $price = $row1['price'];
+
+                            ?>
+                                        <tbody>
+                                            <tr>
+                                                <td class="cen">
+                                                    <P><?php echo $i_id; ?></P>
+                                                </td>
+                                                <td>
+                                                    <P><?php echo $title; ?></P>
+                                                </td>
+                                                <td class="cen">
+                                                    <P><?php echo $qty; ?></P>
+                                                    <input type="hidden" value="<?php echo $qty ?>" class="iqty" name="Mod_Quantity" onchange="subTotal()">
+                                                </td>
+                                                <td class="cen">
+                                                    <P class="iprice"><?php echo $price; ?></P>
+                                                    <input name="price" type="hidden" value="<?php echo $price ?>" class="iprice">
+                                                </td>
+                                                <td>
+                                                    <p class="itotal"><?php echo $price * $qty ?></p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                            <?php
+                                    }
                                 }
                             }
-                        }
-                        ?>
-                    </table>
-                </div>
+                            ?>
+                        </table>
+                    </div>
             </div>
         </div>
-    </div>
-    <div class="footer">
-        <div class="col-8 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer";
-
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Total Quotation
-
-        </div>
-
-        <div class="col-9 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer WHERE s_email='no'";
-
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Pending Quotation
-
-        </div>
-
-        <div class="col-10 text-center col-3">
-            <?php
-            //Create PHP code to display Category from Database
-            //1. Create SQL to get all active categories from database
-            $sql3 = "SELECT * FROM tbl_customer WHERE s_email='yes'";
-
-            //Executing query
-            $res = mysqli_query($conn, $sql3);
-
-            //Count Rows to check whether we have categories or not
-            $count3 = mysqli_num_rows($res);
-
-            ?>
-            <h1><?php echo $count3 ?></h1>
-            <br />
-            Email Send Quotation
-
+        <br><br><br>
+        <div class="qsubmit">
+            <button name="submit">
+                <h3> Send Email </h3>
+            </button>
         </div>
     </div>
+    </form>
+    <div>
+        <?php include('part/quotationinfo.php') ?>
+    </div>
+    <?php
+    if (isset($_POST['submit'])) {
+
+        $c_id = $_POST['c_id'];
+        $s_email = $_POST['s_email'];
+
+        $sql2 = "UPDATE tbl_customer SET
+        s_email = '$s_email'
+        WHERE c_id ='$c_id'
+        ";
+
+        $res = mysqli_query($conn, $sql2);
+
+        if ($res == true) {
+            echo "<script>
+            alert('Email Sent Successfully');
+            window.location.href='./quotation.php';
+        </script>";
+        } else {
+            echo "<script>
+            alert('Email Not Sent');
+        </script>";
+        }
+    }
+?>

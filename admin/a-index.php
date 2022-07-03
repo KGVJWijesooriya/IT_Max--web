@@ -43,7 +43,6 @@
                         </div>
 
                     </div>
-
                     <div class="col-5 text-center col-3">
                         <div class="iboxa">
                             <div>
@@ -66,7 +65,6 @@
                         </div>
 
                     </div>
-
                     <div class="col-6 text-center col-3">
                         <div class="iboxa">
                             <div>

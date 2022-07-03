@@ -1,3 +1,4 @@
+<title>Manage Item</title>
 <body class="content">
     <?php include('part/menu.php'); ?>
 
